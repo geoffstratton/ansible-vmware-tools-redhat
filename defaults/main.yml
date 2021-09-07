@@ -1,0 +1,12 @@
+---
+vmwaretools_pkgs: [ ]
+vmwaretools_pkgs_rhel6:
+  - vmware-tools-esx-kmods
+  - vmware-tools-esx
+vmwaretools_pkgs_rhel7:
+  - open-vm-tools
+vmwaretools_pkgs_rhel8:
+  - open-vm-tools
+vmwaretools_enablerepo_rhel6: ",Default_Organization_Vmware_Tools_esx_6_7u1_rhel6"
+vmwaretools_enablerepo_rhel7: ",Default_Organization_Vmware_Tools_esx_6_7u1_rhel7"
+vmwaretools_enablerepo_rhel8: ",Default_Organization_Vmware_Tools_esx_6_7u1_rhel8"

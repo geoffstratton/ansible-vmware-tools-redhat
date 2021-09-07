@@ -1,0 +1,14 @@
+---
+- name: Verify
+  hosts: all
+
+  tasks:
+    - name: Gather package facts
+      package_facts:
+        manager: auto
+
+    - name: Verify that open-vm-tools is installed
+      assert:
+         that: "'{{ item }}' in ansible_facts.packages"
+      with_items:
+        - open-vm-tools

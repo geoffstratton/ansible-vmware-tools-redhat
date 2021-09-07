@@ -1,0 +1,19 @@
+---
+galaxy_info:
+  role_name: ansible-vmware-tools-redhat
+  author: Geoff Stratton
+  description: Red Hat VMware Tools Role
+  company: GeoffStratton.com    
+  license: 
+    - Apache 2.0
+  min_ansible_version: 
+    - 2.4
+  platforms:
+  - name: rhel
+    versions:
+    - 8
+    - 7
+  galaxy_tags: []
+
+dependencies: []
+      

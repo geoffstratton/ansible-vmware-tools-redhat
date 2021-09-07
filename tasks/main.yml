@@ -1,0 +1,25 @@
+---
+- name: Set vmwaretools repo fact
+  set_fact:
+    vmwaretools_enablerepo: "{{ lookup('vars','vmwaretools_enablerepo_' + ansible_os_family + ansible_distribution_major_version) }}"
+  when:
+    ansible_virtualization_type == "VMware"
+  tags:
+    - vmwaretools
+
+- name: Set vmwaretools package fact
+  set_fact:
+    vmwaretools_pkgs: "{{ lookup('vars','vmwaretools_pkgs_' + ansible_os_family + ansible_distribution_major_version) }}"
+  when:
+    ansible_virtualization_type == "VMware"
+  tags:
+    - vmwaretools
+
+- name: Install vmwaretools
+  yum:
+    name: "{{ lookup('vars', 'vmwaretools_pkgs') }}"
+    enablerepo: "{{ lookup('vars', 'vmwaretools_enablerepo_'+ansible_os_family +ansible_distribution_major_version) }}"
+  when:
+    ansible_virtualization_type == "VMware"
+  tags:
+    - vmwaretools

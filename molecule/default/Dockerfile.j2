@@ -1,0 +1,13 @@
+{% if item.registry is defined %}
+FROM {{ item.registry.url }}/{{ item.image }}
+{% else %}
+FROM {{ item.image }}
+{% endif %}
+
+RUN if [ $(command -v dnf-3) ]; then dnf makecache \
+      && dnf --assumeyes install systemd-udev \
+      && dnf clean all; \
+    elif [ $(command -v yum) ]; then yum makecache fast \
+      && yum -y install systemd-udev \
+      && yum clean all; \
+    fi
