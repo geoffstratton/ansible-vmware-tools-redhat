@@ -4,7 +4,7 @@ ansible-vmware-tools-redhat
 
 Description
 ---------------
-Ansible role to install the VMware Tools on Red Hat Linux systems. You can define your custom repository and packages name in the defaults/main file.
+Ansible role to install the VMware Tools on Red Hat Linux systems. You can define your custom repository and package name in the defaults/main file.
 
 This role was developed and tested on a Mint 20.2 system using [Molecule 3](https://molecule.readthedocs.io/en/latest/) with the Docker driver and Red Hat 7 and 8 containers from [Red Hat's Container Registry](https://catalog.redhat.com/software/containers/explore). A simple Dockerfile and configuration are included.
 
